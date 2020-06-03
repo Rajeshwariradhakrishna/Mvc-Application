@@ -1,0 +1,26 @@
+﻿@*@model IEnumerable<MVC_Binding_Webgrid.Models.EmpClass>*@
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Age</th>
+        <th>Employee Salary</th>
+    </tr>
+
+    @for(int i=0;i<Model.Rows.Count;i++)
+    {
+    <tr>
+        <td>@Model.Rows[i][0]</td>
+        <td>@Model.Rows[i][1]</td>
+        <td>@Model.Rows[i][2]</td>
+        <td>@Model.Rows[i][3]</td>
+    </tr>
+    }
+</table>
+<div>
+    <a href="@Url.Action("Create","Employee")">Add new Employee</a>
+</div>
